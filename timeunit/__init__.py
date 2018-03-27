@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import time
+import time as _time
 
 '''
 timeunit:
@@ -14,15 +14,15 @@ timeunit:
 
 
 # Handy constants for conversion methods
-C0 = 1.0
-C1 = C0 * 1000
-C2 = C1 * 1000
-C3 = C2 * 1000
-C4 = C3 * 60
-C5 = C4 * 60
-C6 = C5 * 24
+_C0 = 1.0
+_C1 = _C0 * 1000
+_C2 = _C1 * 1000
+_C3 = _C2 * 1000
+_C4 = _C3 * 60
+_C5 = _C4 * 60
+_C6 = _C5 * 24
 
-C = [C0, C1, C2, C3, C4, C5, C6]
+_C = [_C0, _C1, _C2, _C3, _C4, _C5, _C6]
 
 class _BaseTimeUnit(object):
     def __init__(self, index, name):
@@ -38,33 +38,33 @@ class _BaseTimeUnit(object):
         return self._name
 
     def to_nanos(self, d):
-        return int(d / (C[0]/C[self.index]))
+        return int(d / (_C[0]/_C[self.index]))
 
     def to_micros(self, d):
-        return int(d / (C[1]/C[self.index]))
+        return int(d / (_C[1]/_C[self.index]))
 
     def to_millis(self, d):
-        return int(d / (C[2]/C[self.index]))
+        return int(d / (_C[2]/_C[self.index]))
 
     def to_seconds(self, d):
-        return int(d / (C[3]/C[self.index]))
+        return int(d / (_C[3]/_C[self.index]))
 
     def to_minutes(self, d):
-        return int(d / (C[4]/C[self.index]))
+        return int(d / (_C[4]/_C[self.index]))
 
     def to_hours(self, d):
-        return int(d / (C[5]/C[self.index]))
+        return int(d / (_C[5]/_C[self.index]))
 
     def to_days(self, d):
-        return int(d / (C[6]/C[self.index]))
+        return int(d / (_C[6]/_C[self.index]))
 
     def convert(self, source_duration, source_unit):
-        return source_duration/ (C[self._index] / C[source_unit.index])
+        return source_duration/ (_C[self._index] / _C[source_unit.index])
 
     def sleep(self, timeout):
         if timeout < 0:
             timeout = 0
-        time.sleep(self.to_seconds(timeout))
+        _time.sleep(self.to_seconds(timeout))
 
 nanoseconds = _BaseTimeUnit(0, "nanoseconds")
 microseconds = _BaseTimeUnit(1, "microseconds")
