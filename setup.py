@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 version = '1.0.0'
 
-setup(name='should',
+setup(name='timeunit',
       version=version,
       description="timeunit",
       long_description='',
