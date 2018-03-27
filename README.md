@@ -1,5 +1,7 @@
 # TimeUnit
 
+[![Build Status](https://travis-ci.org/Ralph-Wang/timeunit-python.svg?branch=master)](https://travis-ci.org/Ralph-Wang/timeunit-python)
+
 Base on java.util.concurrent.TimeUnit and [timeunit](https://www.npmjs.com/package/timeunit) in npm
 
 ## License
