@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import division
 import time as _time
 
 '''
@@ -14,7 +15,7 @@ timeunit:
 
 
 # Handy constants for conversion methods
-_C0 = 1.0
+_C0 = 1
 _C1 = _C0 * 1000
 _C2 = _C1 * 1000
 _C3 = _C2 * 1000
@@ -38,25 +39,25 @@ class _BaseTimeUnit(object):
         return self._name
 
     def to_nanos(self, d):
-        return int(d / (_C[0]/_C[self.index]))
+        return d / (_C[0]/_C[self.index])
 
     def to_micros(self, d):
-        return int(d / (_C[1]/_C[self.index]))
+        return d / (_C[1]/_C[self.index])
 
     def to_millis(self, d):
-        return int(d / (_C[2]/_C[self.index]))
+        return d / (_C[2]/_C[self.index])
 
     def to_seconds(self, d):
-        return int(d / (_C[3]/_C[self.index]))
+        return d / (_C[3]/_C[self.index])
 
     def to_minutes(self, d):
-        return int(d / (_C[4]/_C[self.index]))
+        return d / (_C[4]/_C[self.index])
 
     def to_hours(self, d):
-        return int(d / (_C[5]/_C[self.index]))
+        return d / (_C[5]/_C[self.index])
 
     def to_days(self, d):
-        return int(d / (_C[6]/_C[self.index]))
+        return d / (_C[6]/_C[self.index])
 
     def convert(self, source_duration, source_unit):
         return source_duration/ (_C[self._index] / _C[source_unit.index])
