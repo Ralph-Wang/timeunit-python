@@ -1,6 +1,7 @@
 # TimeUnit
 
 [![Build Status](https://travis-ci.org/Ralph-Wang/timeunit-python.svg?branch=master)](https://travis-ci.org/Ralph-Wang/timeunit-python)
+[![Coverage Status](https://coveralls.io/repos/github/Ralph-Wang/timeunit-python/badge.svg?branch=master)](https://coveralls.io/github/Ralph-Wang/timeunit-python?branch=master)
 
 Base on java.util.concurrent.TimeUnit and [timeunit](https://www.npmjs.com/package/timeunit) in npm
 
